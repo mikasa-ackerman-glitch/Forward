@@ -114,7 +114,7 @@ async def pub_(bot, message):
           MSG = []
           pling=0
           await edit(user, m, 'ᴘʀᴏɢʀᴇssɪɴɢ', 5, sts)
-          async for message in iter_messages(client, chat_id=sts.get("FROM"), limit=sts.get("limit"), offset=sts.get("skip"), filters=filter, max_size=max_size):
+          async for message in iter_messages(client, chat_id=sts.get("FROM"), limit=sts.get("limit"), offset=sts.get("skip"), reverse=True, filters=filter, max_size=max_size):
                 if await is_cancelled(client, user, m, sts):
                    if user_have_db:
                       await user_db.drop_all()
