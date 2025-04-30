@@ -122,7 +122,7 @@ async def pub_(bot, message):
                    return
                 if pling %20 == 0: 
                    await edit(user, m, 'ᴘʀᴏɢʀᴇssɪɴɢ', 5, sts)
-                pling -= 1
+                pling += 1
                 sts.add('fetched')
                 if message == "DUPLICATE":
                    sts.add('duplicate')
