@@ -78,8 +78,7 @@ class CLIENT:
      }
      await db.add_bot(details)
      return True
-
-    async def add_session(self, bot, message):
+      async def add_session(self, bot, message):
      user_id = int(message.from_user.id)
      text = "<b>⚠️ DISCLAIMER ⚠️</b>\n\n<code>You can use your session for forward messages from private chats to another chat.\nPlease add your Pyrogram session with your own risk. There is a chance of your account being banned. My developer is not responsible if your account gets banned.</code>\n\n<b>Please send your Pyrogram session string.</b>\n\n<b>You can get your session string using tools like:</b>\n- <a href='https://my.telegram.org/apps'>Telegram Core (for API ID and Hash)</a> and then a Pyrogram session generator.\n- Other third-party Pyrogram session generator bots/tools (use with caution!)."
      await bot.send_message(user_id, text=text, disable_web_page_preview=True)
