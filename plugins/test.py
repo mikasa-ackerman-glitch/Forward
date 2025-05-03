@@ -97,21 +97,21 @@ class CLIENT:
        await _client.connect()
        user = await _client.get_me()
        await _client.disconnect()
+
+       details = {
+         'id': user.id,
+         'is_bot': False,
+         'user_id': user_id,
+         'name': user.first_name,
+         'session': string_session,
+         'username': user.username
+       }
+       await db.add_userbot(details)
+       await session_string_msg.reply_text("<b>Session string successfully added for your userbot.</b>")
+       return True
+
      except Exception as e:
        return await session_string_msg.reply_text(f"<b>USER BOT ERROR:</b> `{e}`\n\n<b>Please ensure your session string is valid.</b>")
-
-     details = {
-       'id': user.id,
-       'is_bot': False,
-       'user_id': user_id,
-       'name': user.first_name,
-       'session': string_session,
-       'username': user.username
-     }
-     await db.add_userbot(details)
-     await session_string_msg.reply_text("<b>Session string successfully added for your userbot.</b>")
-     return True
-
 # Don't Remove Credit Tg - @VJ_Botz
 # Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
 # Ask Doubt on telegram @KingVJ01
