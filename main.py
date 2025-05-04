@@ -59,7 +59,7 @@ if __name__ == "__main__":
             messages = await self.get_messages(chat_id, list(range(current, current+new_diff+1)))
             for message in messages:
                 yield message
-                current -= 1
+                current += 1
                
     async def main():
         await VJBot.start()
